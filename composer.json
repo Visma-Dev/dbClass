@@ -1,0 +1,24 @@
+{
+    "name": "visma-dev/db-class",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Visma-Dev",
+            "email": "visma-dev@mail.ru",
+            "homepage": "https://github.com/Visma-Dev",
+            "role": "Developer"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Visma\\dbClass\\": "src/"
+        }
+    },
+
+    "require": {
+        "ext-pdo": "*"
+    }
+
+
+}
