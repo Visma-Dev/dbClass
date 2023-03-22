@@ -48,6 +48,7 @@ class Database
 
     /**
      * Database constructor.
+     *
      * @param array $settings
      */
     public function __construct(array $settings)
@@ -86,7 +87,8 @@ class Database
 
 
     /**
-     * Initialization a query
+     * Query Initialization
+     *
      * @param string $query
      * @param array $parameters
      * @return void
@@ -136,6 +138,7 @@ class Database
 
     /**
      * Binding params
+     *
      * @param array $parameters
      * @return void // void indicates that the method returns nothing
      */
@@ -156,6 +159,7 @@ class Database
 
     /**
      * Clearing query and validating output.
+     *
      * @param string $query
      * @param array $parameters
      * @param $mode
@@ -175,12 +179,11 @@ class Database
         //select the first word from the query and convert it to lowercase
         $statement = strtoLower($rawStatement[0]);
 
-        if ($statement === 'select' || 'show') {
+        if (in_array($statement, ['select', 'show'], true)) {
             return $this->statement->fetchAll($mode);
-        }
-        elseif($statement === 'insert' || 'update' || 'delete') {
+        }elseif (in_array($statement, ['insert', 'update', 'delete'], true)) {
             return $this->statement->rowCount();
-        }else{
+        }else {
             return null;
         }
     }
