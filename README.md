@@ -9,7 +9,7 @@ The library implements additional validation of values in order to make an alrea
  * @param array $parameters
  * @return void
  */
-private function init(string $query, array $parameters = []) //we can set the data types for the method parameters
+private function init(string $query, array $parameters = [])
 {
     // check the property for connection
     if (!$this->isConnected) {
